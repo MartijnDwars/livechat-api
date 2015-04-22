@@ -9,11 +9,14 @@ class LivechatApi
    'cannedResponse',
    'chat',
    'goal',
+   'greeting',
    'group',
    'report',
    'status',
+   'tag',
+   'ticket',
    'visitor',
-   'ticket'
+   'webhook',
   );
   public function __construct($user, $api_key)
   {

@@ -51,4 +51,36 @@ class Report extends Base
   {
     return $this->request('GET', '/chats/goals',$data);
   }
+  public function ticketFirstResponseTime($data=[])
+  {
+    return $this->request('GET', '/tickets/first_response_time',$data);
+  }
+  public function solvedTickets($data=[])
+  {
+    return $this->request('GET', '/tickets/solved_tickets',$data);
+  }
+  public function ticketResolutionTime($data=[])
+  {
+    return $this->request('GET', '/tickets/resolution_time',$data);
+  }
+  public function ticketSources($data=[])
+  {
+    return $this->request('GET', '/tickets/ticket_sources',$data);
+  }
+  public function ticketRatings($data=[])
+  {
+    return $this->request('GET', '/tickets/ratings',$data);
+  }
+  public function ticketRanking($data=[])
+  {
+    return $this->request('GET', '/tickets/ratings/ranking',$data);
+  }
+  public function greetingConvertions($data=[])
+  {
+    return $this->request('GET', '/greetings',$data);
+  }
+  public function chatOccupancy($data=[])
+  {
+    return $this->request('GET', '/chats/greetings',$data);
+  }
 }

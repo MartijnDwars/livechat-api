@@ -6,7 +6,6 @@ class RequestTest extends PHPUnit_Framework_TestCase
   public function setUp()
   {
     parent::setUp();
-    $this->api = new LivechatApi('mgufronefendi@gmail.com', '68f0c8c9affe93465ad402e7e896fe9d');
   }
   public function testRequestApi()
   {

@@ -9,7 +9,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
   public function testRequestApi()
   {
     $agents = $this->api->greeting->get();
-    print_r($agents);
+    // print_r($agents);
     // $this->assertTrue(isset($agents['login']));
   }
 }

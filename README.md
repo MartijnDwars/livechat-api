@@ -1,22 +1,57 @@
-api-client-php
+PHP LivechatInc API
 ==============
 
 PHP library with ready-to-use LiveChat API implementation.
 
-Quick example
-=============
+
+## Installation
+
+add this package to your `composer.json` by running this command
+
+```shell
+  composer require gufy/livechat-api
+```
+
+or add this package manually to your `composer.json`
+
+```json
+{
+  "require":{
+    "gufy/livechat-api":"~1"
+  }
+}
+```
+
+## Available Models
+This models are available and ready to use
+  - Agent
+  - CannedResponse
+  - Chat
+  - Goal
+  - Greeting
+  - Group
+  - Report
+  - Status
+  - Tag
+  - Ticket
+  - Visitor
+  - Webhook
+
+## Usage
+
+Try this code below
 
 ```php
 <?php
-require_once('lib/LiveChat_API.php');
+include 'vendor/autoload.php'
 
-try {
-  $LiveChatAPI = new LiveChat_API();
+use Gufy\LivechatApi\LivechatApi;
 
-  // list all your agents
-  var_dump($LiveChatAPI->agents->get());
-}
-catch (Exception $e) {
-  die($e->getCode().' '.$e->getMessage());
-}
+$api = new LivechatApi('your-user-name', 'your-api-key');
+
+// retrieving all agents
+
+$agents = $api->agent->get();
+
+print_r($agents);
 ```

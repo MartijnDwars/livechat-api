@@ -9,7 +9,7 @@ class Agent extends Base
   }
   public function find($login)
   {
-    return $this->request('GET', '/'.$login)
+    return $this->request('GET', '/'.$login);
   }
   public function create($data=[])
   {

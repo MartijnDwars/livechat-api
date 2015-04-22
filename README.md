@@ -46,12 +46,21 @@ Try this code below
 include 'vendor/autoload.php'
 
 use Gufy\LivechatApi\LivechatApi;
-
+use Gufy\LivechatApi\Models\Agent;
 $api = new LivechatApi('your-user-name', 'your-api-key');
 
 // retrieving all agents
 
 $agents = $api->agent->get();
+
+print_r($agents);
+
+// or the other way, and of course you have to declare LivechatApi configuration first before using class below
+
+$class = new Agent;
+$agents = $class->get();
+
+// it will have the same result as the code above
 
 print_r($agents);
 ```

@@ -1,4 +1,5 @@
 <?php namespace Gufy\LivechatApi\Models;
+use Gufy\LivechatApi\LivechatApi;
 use GuzzleHttp\Client;
 use Exception;
 abstract class Base implements \ArrayAccess
@@ -8,8 +9,14 @@ abstract class Base implements \ArrayAccess
   protected $api_key;
   public $data = [];
   protected $baseUrl = '';
-  public function __construct($user, $api_key)
+  public function __construct($user='', $api_key='')
   {
+    if(func_num_args()==0)
+    {
+      $instance = LivechatApi::getInstance();
+      $user = $instance->getUser();
+      $api_key = $instance->getApiKey();
+    }
     $this->user = $user;
     $this->api_key = $api_key;
   }

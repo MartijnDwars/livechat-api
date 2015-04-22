@@ -18,10 +18,13 @@ class LivechatApi
    'visitor',
    'webhook',
   );
+  private static $_instance;
+
   public function __construct($user, $api_key)
   {
     $this->user = $user;
     $this->api_key = $api_key;
+    LivechatApi::setInstance($this);
   }
 
   public function __get($var)
@@ -33,5 +36,21 @@ class LivechatApi
     $model = new $class($this->user, $this->api_key);
 
     return $model;
+  }
+  public static function setInstance($instance)
+  {
+    return static::$_instance = $instance;
+  }
+  public static function getInstance()
+  {
+    return static::$_instance;
+  }
+  public function getUser()
+  {
+    return $this->user;
+  }
+  public function getApiKey()
+  {
+    return $this->api_key;
   }
 }

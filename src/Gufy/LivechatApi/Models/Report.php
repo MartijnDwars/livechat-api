@@ -47,10 +47,6 @@ class Report extends Base
   {
     return $this->request('GET', '/chats/goals',$data);
   }
-  public function chatGoals($data=[])
-  {
-    return $this->request('GET', '/chats/goals',$data);
-  }
   public function ticketFirstResponseTime($data=[])
   {
     return $this->request('GET', '/tickets/first_response_time',$data);

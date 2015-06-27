@@ -7,11 +7,22 @@ class RequestTest extends PHPUnit_Framework_TestCase
   {
     parent::setUp();
   }
-  public function testRequestApi()
+
+  public function testGetAgents()
   {
-    $agent = new Agent;
-    $agents = $agent->get();
-    print_r($agents);
-    // $this->assertTrue(isset($agents['login']));
+    $livechatApi = new LivechatApi('test-user', 'test-key');
+
+    $agents = $livechatApi->agent->get();
+
+    $this->assertInternalType('array', $agents);
+  }
+
+  public function testGetReportTotalChats()
+  {
+    $livechatApi = new LivechatApi('test-user', 'test-key');
+
+    $totalChats = $livechatApi->report->totalChats();
+
+    $this->assertInternalType('array', $totalChats);
   }
 }

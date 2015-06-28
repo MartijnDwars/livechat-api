@@ -3,9 +3,9 @@
 class Chat extends Base
 {
   public $baseUrl = 'chats';
-  public function get()
+  public function get($data = [])
   {
-    return $this->request('GET', '/');
+    return $this->request('GET', '/', $data);
   }
   public function find($id)
   {

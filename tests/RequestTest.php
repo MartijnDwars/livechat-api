@@ -25,4 +25,15 @@ class RequestTest extends PHPUnit_Framework_TestCase
 
     $this->assertInternalType('array', $totalChats);
   }
+
+  public function testGetChats()
+  {
+    $livechatApi = new LivechatApi('test-user', 'test-key');
+
+    $chats = $livechatApi->chat->get([
+      'group' => 0
+    ]);
+
+    $this->assertInternalType('array', $chats);
+  }
 }

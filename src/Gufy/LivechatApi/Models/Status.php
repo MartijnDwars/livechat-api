@@ -1,10 +1,12 @@
-<?php namespace Gufy\LivechatApi\Models;
+<?php
+
+namespace Gufy\LivechatApi\Models;
 
 class Status extends Base
 {
-  public $baseUrl = 'status';
-  public function get($data=[])
-  {
-    return $this->request('GET', '/', $data);
-  }
+    public $baseUrl = 'status';
+    public function get($data = [])
+    {
+        return $this->request('GET', '/', $data);
+    }
 }

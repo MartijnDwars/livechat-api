@@ -53,7 +53,7 @@ abstract class Base implements \ArrayAccess
 
             return $response->json();
         } catch (\Exception $e) {
-            return json_decode((string) $e->getResponse()->getBody(), 1);
+            throw new Exception(json_decode((string) $e->getResponse()->getBody(), 1));
         }
     }
 

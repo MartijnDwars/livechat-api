@@ -2,6 +2,7 @@
 
 namespace Gufy\LivechatApi\Models;
 
+use GuzzleHttp\Exception\RequestException;
 use Gufy\LivechatApi\LivechatException;
 use Gufy\LivechatApi\LivechatApi;
 use GuzzleHttp\Client;
@@ -53,7 +54,7 @@ abstract class Base implements \ArrayAccess
             $response = $client->send($request);
 
             return $response->json();
-        } catch (\Exception $e) {
+        } catch (RequestException $e) {
             $body = json_decode($e->getResponse()->getBody(), true);
 
             throw new LivechatException($body['error']);
